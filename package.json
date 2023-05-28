@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.ts"
+    "dev": "nodemon index.ts",
+    "build": "rimraf ./dist && tsc",
+    "start": "npm run build && node --no-warnings --es-module-specifier-resolution=node ./dist/index.js"
   },
   "type": "module",
   "keywords": [],
@@ -12,8 +14,8 @@
   "license": "ISC",
   "devDependencies": {
     "@types/express": "^4.17.17",
-    "@types/node": "^20.2.3",
     "nodemon": "^2.0.22",
+    "rimraf": "^5.0.1",
     "ts-node": "^10.9.1",
     "typescript": "^5.0.4"
   },
